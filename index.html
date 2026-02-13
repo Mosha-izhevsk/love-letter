@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#800020">
+  <title>For Ndivhuwo - My Baddie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #050505;
+      --card: #0a0a0a;
+      --primary: #800020;
+      --primary-light: #a5002b;
+      --primary-dark: #4a0012;
+      --accent: #FFD700;
+      --accent-soft: #ffe08c;
+      --text: #e6c5c5;
+      --text-muted: #b38a8a;
+      --border: #590016;
+      --surface: #1c1c1c;
+      --radius-xl: 3rem;
+      --radius-lg: 2.25rem;
+      --radius-md: 1.75rem;
+      --radius-sm: 1.25rem;
+      --radius-full: 999px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      font-family: 'Quicksand', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1rem;
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 15% 25%, hsl(345, 100%, 8%) 0%, transparent 50%),
+        radial-gradient(circle at 85% 75%, hsl(345, 100%, 5%) 0%, transparent 50%);
+      z-index: 0;
+    }
+
+    .main-container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .love-letter-box {
+      background: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1.5px solid var(--primary);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 215, 0, 0.08);
+      padding: 1.5rem;
+    }
+
+    /* ---- COUNTDOWN SECTION ---- */
+    .countdown-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 70vh;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .countdown-title {
+      color: var(--accent);
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      text-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .countdown-subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      font-style: italic;
+    }
+
+    .countdown-hearts {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      color: var(--accent);
+    }
+
+    .countdown-hearts svg {
+      width: 32px;
+      height: 32px;
+      fill: var(--accent);
+    }
+
+    .countdown-timer {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .time-block {
+      background: rgba(128, 0, 32, 0.2);
+      border: 1px solid var(--primary);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.5rem;
+      min-width: 80px;
+      backdrop-filter: blur(8px);
+    }
+
+    .time-number {
+      color: var(--accent);
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .time-label {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .countdown-message {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 400px;
+      margin: 0 auto;
+      background: rgba(10, 10, 10, 0.6);
+      padding: 1.2rem;
+      border-radius: var(--radius-full);
+      border: 1px dashed var(--primary);
+    }
+
+    .countdown-message i {
+      color: var(--accent);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    /* ---- Animations ---- */
+    @keyframes float-heart {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+      50% { transform: translateY(-20px) scale(1.1); opacity: 1; }
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(128, 0, 32, 0.3); }
+      50% { box-shadow: 0 0 40px rgba(128, 0, 32, 0.6), 0 0 60px rgba(255, 215, 0, 0.15); }
+    }
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scale-out {
+      from { opacity: 1; transform: scale(1); }
+      to { opacity: 0; transform: scale(0.95); }
+    }
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.88); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes staggerIn {
+      from { opacity: 0; transform: translateY(16px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .animate-float { animation: float-heart 3s ease-in-out infinite; }
+    .animate-float-d1 { animation: float-heart 3s ease-in-out infinite; animation-delay: 0.5s; }
+    .animate-float-d2 { animation: float-heart 3s ease-in-out infinite; animation-delay: 1s; }
+    .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+    .animate-fade-up { animation: fade-up 0.7s ease-out both; }
+
+    .hidden { display: none !important; }
+    .phase-exit { animation: scale-out 0.4s ease forwards; }
+
+    /* ---- SVG Icons ---- */
+    .icon { display: inline-block; vertical-align: middle; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .icon-sm { width: 16px; height: 16px; }
+    .icon-md { width: 20px; height: 20px; }
+    .icon-lg { width: 24px; height: 24px; }
+    .icon-xl { width: 40px; height: 40px; }
+    .icon-filled { fill: currentColor; }
+
+    /* ---- VAULT ---- */
+    .vault-section { max-width: 100%; margin: 0 auto; }
+    .vault-card {
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--primary);
+      background: var(--card);
+      padding: 1.8rem 1.2rem;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+    .floating-hearts { display: flex; justify-content: center; gap: 1rem; margin-bottom: 0.8rem; color: var(--accent); }
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      border-radius: var(--radius-full); border: 1px dashed var(--accent);
+      background: rgba(128, 0, 32, 0.25); padding: 0.4rem 1rem;
+      color: var(--text-muted); font-weight: 500; font-size: 0.8rem; margin-bottom: 0.8rem;
+    }
+    .vault-title {
+      color: var(--accent); font-weight: 700; font-size: 2rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      text-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary-light);
+      margin-bottom: 0.5rem;
+    }
+    .vault-lock-icon { color: var(--accent); opacity: 0.6; margin: 0.5rem 0; }
+    .vault-message { color: var(--text-muted); line-height: 1.5; font-size: 0.9rem; margin-bottom: 0.5rem; }
+    .vault-highlight { color: var(--accent); font-weight: 700; font-size: 1rem; margin-bottom: 0.8rem; }
+    .vault-quote { color: var(--text-muted); font-style: italic; font-size: 0.85rem; margin-bottom: 1.2rem; }
+    .password-row { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+    .password-input {
+      width: 100%; max-width: 280px; border-radius: var(--radius-full); border: 2px solid var(--primary);
+      background: var(--surface); padding: 0.85rem 1.2rem; color: var(--accent);
+      font-weight: 600; letter-spacing: 3px; text-align: center; font-size: 1rem;
+      font-family: inherit; outline: none; transition: all 0.25s;
+    }
+    .password-input::placeholder { color: rgba(230, 197, 197, 0.4); letter-spacing: 2px; font-size: 0.9rem; }
+    .password-input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.2); }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      border-radius: var(--radius-full); border: 2px solid var(--accent);
+      background: var(--primary); padding: 0.85rem 1.5rem; color: #fff;
+      font-weight: 700; font-size: 1rem; font-family: inherit;
+      letter-spacing: 1px; cursor: pointer; transition: all 0.2s;
+    }
+    .btn:hover { background: var(--primary-light); box-shadow: 0 0 25px rgba(255, 215, 0, 0.3); transform: scale(1.02); }
+    .btn:active { transform: scale(0.98); }
+    .btn .icon { color: var(--accent); }
+    .btn-large { font-size: 1.1rem; padding: 0.9rem 2rem; letter-spacing: 2px; box-shadow: 0 6px 0 var(--primary-dark); }
+    .btn-large:hover { box-shadow: 0 0 30px rgba(255, 215, 0, 0.25), 0 6px 0 var(--primary-dark); transform: scale(1.03); }
+    .hint-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      border-radius: var(--radius-full); border: 1px solid var(--primary);
+      background: rgba(128, 0, 32, 0.15); padding: 0.4rem 1rem;
+      color: var(--accent); font-size: 0.8rem;
+    }
+    .error-message { min-height: 2rem; margin-top: 0.8rem; display: flex; align-items: center; justify-content: center; color: #ff6b6b; font-weight: 600; font-size: 0.85rem; }
+
+    /* ---- WELCOME ---- */
+    .welcome-section {
+      border-radius: var(--radius-lg); border: 2px solid var(--primary);
+      background: rgba(10, 10, 10, 0.9); padding: 1.2rem; text-align: center;
+      backdrop-filter: blur(8px); box-shadow: 0 0 40px rgba(255, 215, 0, 0.12);
+      margin-bottom: 1.5rem;
+    }
+    .welcome-text {
+      color: var(--accent); font-size: 1rem; line-height: 1.6; font-weight: 500;
+      display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; gap: 0.4rem;
+    }
+    .welcome-hearts { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-top: 0.8rem; color: var(--primary); }
+
+    /* ---- VIDEO ---- */
+    .video-section {
+      border-radius: 1.5rem; border: 1px solid rgba(255, 215, 0, 0.4);
+      background: var(--card); padding: 1rem; text-align: center;
+      box-shadow: inset 0 0 30px rgba(128, 0, 32, 0.3); margin-bottom: 1.5rem;
+    }
+    .video-inner {
+      border-radius: var(--radius-md); border: 2px solid var(--primary);
+      background: rgba(28, 28, 28, 0.5); padding: 1.2rem;
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .video-title { color: var(--accent); font-size: 1.3rem; font-weight: 600; letter-spacing: 2px; }
+    .video-subtitle { color: rgba(255, 215, 0, 0.8); font-size: 0.85rem; }
+    .video-player-wrapper {
+      width: 100%; border-radius: 0.8rem;
+      background: var(--bg); padding: 0.3rem; border: 1.5px solid rgba(128, 0, 32, 0.5);
+    }
+    .video-player-wrapper video { width: 100%; border-radius: 0.5rem; display: block; }
+
+    /* ---- AUDIO ---- */
+    .audio-bar {
+      border-radius: var(--radius-full); border: 1px solid var(--primary);
+      background: var(--bg); padding: 0.6rem 1rem;
+      display: flex; align-items: center; flex-wrap: wrap;
+      gap: 0.75rem; margin-bottom: 1.5rem;
+      box-shadow: 0 6px 0 hsl(345, 100%, 10%), 0 8px 25px rgba(0,0,0,0.6);
+    }
+    .track-name-pill { font-size: 0.8rem; padding: 0.3rem 0.8rem; }
+    .progress-bar { display: none; }
+    .audio-controls { margin-left: auto; }
+
+    /* ---- LOVE LETTER (with collage unlock condition) ---- */
+    .letter-section {
+      border-radius: var(--radius-lg); border: 2px solid var(--primary);
+      background: rgba(15, 8, 8, 0.6); padding: 1.2rem;
+      box-shadow: inset 0 0 30px rgba(255, 215, 0, 0.05); margin-bottom: 1.5rem;
+    }
+    .letter-card { gap: 1rem; }
+    .letter-photo { max-width: 100%; }
+    .letter-text-box { padding: 1.2rem; }
+    .letter-text-box p { font-size: 1rem; }
+
+    /* ---- COLLAGE (hidden until all 7 slides are viewed) ---- */
+    .collage-wrapper {
+      transition: opacity 0.5s ease;
+    }
+    .collage-locked {
+      opacity: 0.5;
+      pointer-events: none;
+      filter: blur(2px);
+      position: relative;
+    }
+    .collage-locked::after {
+      content: '✨ Complete the love letter to unlock ✨';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(128, 0, 32, 0.9);
+      color: var(--accent);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-align: center;
+      z-index: 10;
+      border: 2px solid var(--accent);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+    @media (max-width: 600px) {
+      .collage-locked::after {
+        white-space: normal;
+        width: 80%;
+        font-size: 0.8rem;
+      }
+    }
+
+    .collage-heading h3 { font-size: 1.3rem; }
+    .collage-heading p { font-size: 0.8rem; }
+    .collage-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 110px;
+      gap: 0.5rem;
+    }
+    .mc-tall { grid-row: span 2; }
+    .mc-wide { grid-column: span 2; }
+    .mc-wide-short { grid-column: span 2; grid-row: span 2; }
+    .mc-standard { grid-row: span 1; }
+    .mc-feature { grid-column: span 2; grid-row: span 2; }
+
+    .memory-card .caption-overlay {
+      font-size: 0.7rem;
+      padding: 1.5rem 0.5rem 0.4rem;
+    }
+
+    .collage-footer {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--primary);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    /* ---- LIGHTBOX ---- */
+    .lightbox {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.96); backdrop-filter: blur(14px);
+      z-index: 9999; display: flex; align-items: center; justify-content: center;
+      opacity: 0; visibility: hidden; transition: opacity 0.35s, visibility 0.35s;
+    }
+    .lightbox.active { opacity: 1; visibility: visible; }
+    .lightbox-inner {
+      position: relative; max-width: 95vw;
+      animation: zoomIn 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .lightbox-image {
+      max-width: 100%; max-height: 80vh;
+      border: 3px solid var(--accent); border-radius: 1rem;
+      box-shadow: 0 0 50px rgba(255, 215, 0, 0.2);
+      object-fit: contain;
+    }
+    .lightbox-caption {
+      position: absolute; bottom: -2rem; left: 50%; transform: translateX(-50%);
+      color: var(--accent); font-size: 0.85rem; font-weight: 600;
+      padding: 0.3rem 1rem; background: rgba(128, 0, 32, 0.85);
+      border-radius: var(--radius-full); backdrop-filter: blur(4px);
+      white-space: nowrap;
+    }
+    .lightbox-close {
+      position: absolute; top: 0.5rem; right: 0.5rem;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--primary); border: 2px solid var(--accent);
+      color: var(--accent); display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .lb-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--primary); border: 2px solid var(--accent);
+      color: var(--accent); display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all 0.2s; font-size: 1.4rem;
+    }
+    .lb-prev { left: 0.5rem; }
+    .lb-next { right: 0.5rem; }
+    .lb-counter {
+      position: absolute; top: -1.5rem; left: 50%; transform: translateX(-50%);
+      color: var(--text-muted); font-size: 0.8rem;
+    }
+
+    @media (min-width: 600px) {
+      .main-container { max-width: 700px; }
+      .password-row { flex-direction: row; }
+      .password-input { width: 220px; }
+      .progress-bar { display: block; }
+      .collage-grid { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 140px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="main-container">
+  <div class="love-letter-box">
+
+    <!-- ===== COUNTDOWN SECTION ===== -->
+    <div id="countdownPhase">
+      <div class="countdown-section">
+        <div class="countdown-hearts">
+          <svg viewBox="0 0 24 24" class="animate-float"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <svg viewBox="0 0 24 24" class="animate-float-d1"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <svg viewBox="0 0 24 24" class="animate-float-d2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h1 class="countdown-title">VALENTINE'S DAY</h1>
+        <p class="countdown-subtitle">A special message is waiting for you</p>
+        
+        <div class="countdown-timer" id="countdownTimer">
+          <div class="time-block"><span class="time-number" id="days">00</span><span class="time-label">Days</span></div>
+          <div class="time-block"><span class="time-number" id="hours">00</span><span class="time-label">Hours</span></div>
+          <div class="time-block"><span class="time-number" id="minutes">00</span><span class="time-label">Minutes</span></div>
+          <div class="time-block"><span class="time-number" id="seconds">00</span><span class="time-label">Seconds</span></div>
+        </div>
+        
+        <div class="countdown-message">
+          <i class="fas fa-heart" style="color:var(--accent)"></i> 
+          This love letter will unlock on February 14th 
+          <i class="fas fa-heart" style="color:var(--accent)"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PHASE 1: VAULT ===== -->
+    <div id="vaultPhase" class="hidden">
+      <div class="vault-card animate-pulse-glow">
+        <div class="floating-hearts">
+          <svg class="icon icon-md icon-filled animate-float" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <svg class="icon icon-md icon-filled animate-float-d1" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <svg class="icon icon-md icon-filled animate-float-d2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="badge">
+          <svg class="icon icon-sm icon-filled" style="color:var(--accent)" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span>Dear Ndivhuwo Mufamadi</span>
+          <svg class="icon icon-sm icon-filled" style="color:var(--accent)" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h2 class="vault-title">BADDIE</h2>
+        <div class="vault-lock-icon">
+          <svg class="icon icon-lg" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <p class="vault-message">I wanted to show you my appreciation and my love<br>and how much you mean to me and how you have shaped my life</p>
+        <p class="vault-highlight">and how deeply in-love with you.</p>
+        <p class="vault-quote">"So start blushin and enjoy this show."</p>
+        <div class="password-row">
+          <input type="password" id="passInput" class="password-input" placeholder="your secret" autocomplete="off">
+          <button id="unlockBtn" class="btn">
+            <svg class="icon icon-md" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Open Vault</span>
+          </button>
+        </div>
+        <div class="hint-badge"><span style="opacity:0.7">Hint:</span> Your pet name</div>
+        <div id="errorMsg" class="error-message"></div>
+      </div>
+    </div>
+
+    <!-- ===== PHASE 2: VIDEO ===== -->
+    <div id="videoPhase" class="hidden">
+      <div class="welcome-section animate-fade-up">
+        <p class="welcome-text">
+          <svg class="icon icon-md" style="color:var(--accent);transform:rotate(180deg);flex-shrink:0;margin-top:3px" viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+          <span style="text-wrap:balance">Dear Ndivhuwo Mufamadi, Baddie&mdash;I wanted to show you my appreciation and my love and how much you mean to me and how you have shaped my life and how deeply in-love with you. So start blushin and enjoy this show.</span>
+          <svg class="icon icon-md" style="color:var(--accent);flex-shrink:0;margin-top:3px" viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+        </p>
+        <div class="welcome-hearts">
+          <svg class="icon icon-md icon-filled" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <svg class="icon icon-lg icon-filled" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <svg class="icon icon-md icon-filled" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+      </div>
+      <div class="video-section animate-fade-up" style="animation-delay:0.15s">
+        <div class="video-inner">
+          <svg class="icon icon-xl video-icon" viewBox="0 0 24 24"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
+          <h3 class="video-title">My Message For You</h3>
+          <span class="video-subtitle">Watch with love</span>
+          <div class="video-player-wrapper">
+            <video id="introVideo" autoplay playsinline controls preload="auto">
+              <source src="intro.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p class="video-footer">
+            <svg class="icon icon-sm icon-filled" style="color:var(--accent)" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            every word from my heart
+          </p>
+        </div>
+        <div style="margin-top:1.2rem">
+          <button id="continueBtn" class="btn btn-large">
+            <svg class="icon icon-md icon-filled" style="color:var(--accent)" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span>Continue</span>
+            <svg class="icon icon-md" style="color:var(--accent)" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PHASE 3: GALLERY ===== -->
+    <div id="galleryPhase" class="hidden">
+      <div class="welcome-section animate-fade-up">
+        <p class="welcome-text">
+          <svg class="icon icon-md" style="color:var(--accent);transform:rotate(180deg);flex-shrink:0;margin-top:3px" viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+          <span style="text-wrap:balance">Dear Ndivhuwo Mufamadi, Baddie&mdash;I wanted to show you my appreciation and my love and how much you mean to me and how you have shaped my life and how deeply in-love with you. So start blushin and enjoy this show.</span>
+          <svg class="icon icon-md" style="color:var(--accent);flex-shrink:0;margin-top:3px" viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+        </p>
+        <div class="welcome-hearts">
+          <svg class="icon icon-md icon-filled" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <svg class="icon icon-lg icon-filled" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <svg class="icon icon-md icon-filled" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+      </div>
+
+      <!-- Audio Player -->
+      <div class="audio-bar animate-fade-up" style="animation-delay:0.1s">
+        <audio id="audioElement" preload="auto"><source src="Track1.mp3" type="audio/mpeg"></audio>
+        <div class="track-info">
+          <svg class="icon icon-lg headphones-icon" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+          <div class="track-name-pill">
+            <svg class="icon icon-sm" style="color:var(--accent)" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            <span id="trackName">Track 1 - our melody</span>
+          </div>
+        </div>
+        <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+        <div class="audio-controls">
+          <button id="prevBtn" class="audio-btn" aria-label="Previous track">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>
+          </button>
+          <button id="playPauseBtn" class="audio-btn audio-btn-play" aria-label="Play">
+            <svg id="playIcon" class="icon icon-md" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <svg id="pauseIcon" class="icon icon-md hidden" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <button id="nextBtn" class="audio-btn" aria-label="Next track">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Love Letter Sequence (7 slides: 3 videos + 4 images) -->
+      <div class="letter-section animate-fade-up" style="animation-delay:0.2s">
+        <div class="letter-card">
+          <div id="letterPhoto" class="letter-photo">
+            <img id="letterImage" src="" alt="our memory" style="display: none;">
+            <video id="letterVideo" src="" controls playsinline style="display: none;"></video>
+          </div>
+          <div id="letterTextBox" class="letter-text-box"><p id="letterText"></p></div>
+          <button id="nextLetterBtn" class="btn">
+            <svg class="icon icon-md icon-filled" style="color:var(--accent)" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span id="nextLetterLabel">Next</span>
+            <svg id="nextArrowIcon" class="icon icon-md" style="color:var(--accent)" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <svg id="infinityIcon" class="icon icon-md hidden" style="color:var(--accent)" viewBox="0 0 24 24"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4z"/></svg>
+          </button>
+          <p id="letterCounter" class="letter-counter"></p>
+        </div>
+      </div>
+
+      <!-- Photo Collage (locked until all 7 slides are viewed) -->
+      <div id="collageWrapper" class="collage-wrapper collage-locked animate-fade-up" style="animation-delay:0.3s">
+        <div class="collage-heading">
+          <h3>Our Moments</h3>
+          <p>tap any photo to see it up close</p>
+        </div>
+        <div id="collageGrid" class="collage-grid"></div>
+        <div class="collage-footer">
+          <svg class="icon icon-sm icon-filled" style="color:var(--accent)" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          always, completely yours
+          <svg class="icon icon-sm icon-filled" style="color:var(--accent)" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+  <div class="lightbox-inner">
+    <img id="lightboxImage" class="lightbox-image" src="" alt="">
+    <div id="lightboxCaption" class="lightbox-caption"></div>
+    <span id="lbCounter" class="lb-counter"></span>
+    <div class="lightbox-close" id="lightboxClose">
+      <svg class="icon icon-lg" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </div>
+    <div class="lb-arrow lb-prev" id="lbPrev">
+      <svg class="icon icon-md" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+    </div>
+    <div class="lb-arrow lb-next" id="lbNext">
+      <svg class="icon icon-md" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  "use strict";
+
+  // ========== VALENTINE'S DAY COUNTDOWN ==========
+  const now = new Date();
+  let targetYear = now.getFullYear();
+  const targetDate = new Date(targetYear, 1, 14); // February 14
+  
+  if (now > targetDate) {
+    targetYear++;
+    targetDate.setFullYear(targetYear);
+  }
+  
+  const targetTime = targetDate.getTime();
+
+  const countdownPhase = document.getElementById('countdownPhase');
+  const vaultPhase = document.getElementById('vaultPhase');
+  const videoPhase = document.getElementById('videoPhase');
+  const galleryPhase = document.getElementById('galleryPhase');
+  
+  const daysEl = document.getElementById('days');
+  const hoursEl = document.getElementById('hours');
+  const minutesEl = document.getElementById('minutes');
+  const secondsEl = document.getElementById('seconds');
+
+  let countdownInterval;
+
+  function updateCountdown() {
+    const currentTime = new Date().getTime();
+    const diff = targetTime - currentTime;
+    
+    if (diff <= 0) {
+      countdownPhase.classList.add('hidden');
+      vaultPhase.classList.remove('hidden');
+      clearInterval(countdownInterval);
+      // Initialize the app
+      if (window.valentineInit) {
+        window.valentineInit();
+      }
+      setTimeout(() => {
+        document.getElementById('passInput')?.focus();
+      }, 400);
+      return;
+    }
+    
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+    daysEl.textContent = days.toString().padStart(2, '0');
+    hoursEl.textContent = hours.toString().padStart(2, '0');
+    minutesEl.textContent = minutes.toString().padStart(2, '0');
+    secondsEl.textContent = seconds.toString().padStart(2, '0');
+  }
+  
+  countdownInterval = setInterval(updateCountdown, 1000);
+  updateCountdown();
+
+  // ========== MAIN APPLICATION (runs after countdown) ==========
+  function initApp() {
+    const SECRET_PASS = "baddie";
+
+    // ---------- LOVE LETTER SEQUENCE (7 slides) ----------
+    const loveLetters = [
+      { type: "video", file: "videoslide1.mp4", text: "Every moment with you is a treasure. This is the beginning of our story." },
+      { type: "video", file: "videoslide2.mp4", text: "You walked into my life and painted it with golden light." },
+      { type: "video", file: "videoslide3.mp4", text: "Your smile, your laugh, your heart — everything about you is beautiful." },
+      { type: "image", file: "imageslide1.jpeg", text: "Baby girl our love may have started in the comment section but to my heart you belong in the vvvvvip section part of my heart, as the sole resident sweetheart." },
+      { type: "image", file: "imageslide2.jpeg", text: "Every notification from you makes my world stop. You turned a simple comment into a lifetime of meaning." },
+      { type: "image", file: "imageslide3.jpeg", text: "Your laugh is the soundtrack of my favorite days. Your strength is my anchor." },
+      { type: "image", file: "imageslide4.jpeg", text: "You shaped my heart into something I never knew it could be. Forever grateful, forever yours." }
+    ];
+
+    // ---------- COLLAGE IMAGES - image1.jpeg to image15.jpeg ----------
+    const collageImages = [];
+    for (let i = 1; i <= 15; i++) {
+      let caption = "";
+      if (i === 1) caption = "✨ the moment i saw you · baddie aura";
+      else if (i === 2) caption = "🌙 you listened · my heart shifted";
+      else if (i === 3) caption = "🖤 your laugh · burgundy wine";
+      else if (i === 4) caption = "📖 you shaped my dreams";
+      else if (i === 5) caption = "💛 you + me · golden hour";
+      else if (i === 6) caption = "🥀 your strength · my anchor";
+      else if (i === 7) caption = "♾️ baddie · my universe";
+      else if (i === 8) caption = "💖 forever and always";
+      else if (i === 9) caption = "🌹 our love story";
+      else if (i === 10) caption = "💫 you complete me";
+      else if (i === 11) caption = "✨ my everything";
+      else if (i === 12) caption = "💕 always and forever";
+      else if (i === 13) caption = "🌟 my sunshine";
+      else if (i === 14) caption = "💝 my heart is yours";
+      else if (i === 15) caption = "💞 eternally grateful";
+      
+      let span = "mc-standard";
+      if (i === 1) span = "mc-feature";
+      else if (i === 2 || i === 6) span = "mc-tall";
+      else if (i === 4 || i === 5 || i === 8) span = "mc-wide-short";
+      else if (i === 7) span = "mc-wide-short";
+      
+      collageImages.push({
+        src: "image" + i + ".jpeg",
+        caption: caption,
+        span: span
+      });
+    }
+
+    // ---------- AUDIO TRACKS ----------
+    const tracks = [
+      { name: "Track 1 - our melody", file: "Track1.mp3" },
+      { name: "Track 2 - heartbeat",  file: "Track2.mp3" },
+      { name: "Track 3 - memories",   file: "Track3.mp3" },
+      { name: "Track 4 - forever",    file: "Track4.mp3" },
+      { name: "Track 5 - you and me", file: "Track5.mp3" }
+    ];
+
+    // ---------- ELEMENTS ----------
+    const passInput = document.getElementById("passInput");
+    const unlockBtn = document.getElementById("unlockBtn");
+    const errorMsg = document.getElementById("errorMsg");
+    const introVideo = document.getElementById("introVideo");
+    const continueBtn = document.getElementById("continueBtn");
+
+    const audioEl = document.getElementById("audioElement");
+    const trackNameEl = document.getElementById("trackName");
+    const progressFill = document.getElementById("progressFill");
+    const playIcon = document.getElementById("playIcon");
+    const pauseIcon = document.getElementById("pauseIcon");
+
+    const letterPhoto = document.getElementById("letterPhoto");
+    const letterImage = document.getElementById("letterImage");
+    const letterVideo = document.getElementById("letterVideo");
+    const letterText = document.getElementById("letterText");
+    const letterTextBox = document.getElementById("letterTextBox");
+    const nextLetterBtn = document.getElementById("nextLetterBtn");
+    const nextLetterLabel = document.getElementById("nextLetterLabel");
+    const nextArrowIcon = document.getElementById("nextArrowIcon");
+    const infinityIcon = document.getElementById("infinityIcon");
+    const letterCounter = document.getElementById("letterCounter");
+
+    const collageWrapper = document.getElementById("collageWrapper");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+    const lbCounter = document.getElementById("lbCounter");
+
+    // ---------- STATE ----------
+    let currentLetterIdx = 0;
+    let currentTrackIdx = 0;
+    let isPlaying = false;
+    let currentLbIdx = 0;
+
+    // ---------- PHASE TRANSITIONS ----------
+    function showPhase(target) {
+      [vaultPhase, videoPhase, galleryPhase].forEach(el => {
+        if (el !== target) el.classList.add("hidden");
+      });
+      target.classList.remove("hidden");
+    }
+
+    // ---------- VAULT UNLOCK ----------
+    function unlock() {
+      const val = passInput.value.trim().toLowerCase();
+      if (val === SECRET_PASS) {
+        errorMsg.textContent = "";
+        vaultPhase.classList.add("phase-exit");
+        setTimeout(() => {
+          showPhase(videoPhase);
+          introVideo.play().catch(() => {});
+        }, 400);
+      } else {
+        errorMsg.textContent = "Not quite... hint: Your pet name";
+        passInput.value = "";
+      }
+    }
+
+    unlockBtn.addEventListener("click", unlock);
+    passInput.addEventListener("keydown", e => { if (e.key === "Enter") unlock(); });
+    passInput.addEventListener("input", () => { errorMsg.textContent = ""; });
+
+    // ---------- VIDEO -> GALLERY ----------
+    function goToGallery() {
+      introVideo.pause();
+      showPhase(galleryPhase);
+      galleryPhase.scrollIntoView({ behavior: "smooth", block: "start" });
+      renderCollage();
+      updateLetterCard(0);
+      loadTrack(0);
+      playTrack();
+    }
+
+    continueBtn.addEventListener("click", goToGallery);
+    introVideo.addEventListener("ended", goToGallery);
+
+    // ---------- AUDIO PLAYER ----------
+    function loadTrack(idx) {
+      currentTrackIdx = idx;
+      audioEl.src = tracks[idx].file;
+      audioEl.load();
+      trackNameEl.textContent = tracks[idx].name;
+      progressFill.style.width = "0%";
+    }
+
+    function playTrack() {
+      audioEl.play().then(() => {
+        isPlaying = true;
+        playIcon.classList.add("hidden");
+        pauseIcon.classList.remove("hidden");
+      }).catch(() => {});
+    }
+
+    function pauseTrack() {
+      audioEl.pause();
+      isPlaying = false;
+      pauseIcon.classList.add("hidden");
+      playIcon.classList.remove("hidden");
+    }
+
+    document.getElementById("playPauseBtn").addEventListener("click", () => {
+      isPlaying ? pauseTrack() : playTrack();
+    });
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      const idx = (currentTrackIdx + 1) % tracks.length;
+      loadTrack(idx);
+      if (isPlaying) setTimeout(playTrack, 100);
+    });
+
+    document.getElementById("prevBtn").addEventListener("click", () => {
+      const idx = (currentTrackIdx - 1 + tracks.length) % tracks.length;
+      loadTrack(idx);
+      if (isPlaying) setTimeout(playTrack, 100);
+    });
+
+    audioEl.addEventListener("timeupdate", () => {
+      if (audioEl.duration) {
+        progressFill.style.width = (audioEl.currentTime / audioEl.duration * 100) + "%";
+      }
+    });
+
+    audioEl.addEventListener("ended", () => {
+      const idx = (currentTrackIdx + 1) % tracks.length;
+      loadTrack(idx);
+      setTimeout(playTrack, 100);
+    });
+
+    // ---------- LOVE LETTER SEQUENCE ----------
+    function updateLetterCard(idx) {
+      const letter = loveLetters[idx];
+      
+      letterImage.style.display = "none";
+      letterVideo.style.display = "none";
+      letterVideo.pause();
+      
+      if (letter.type === "image") {
+        letterImage.src = letter.file;
+        letterImage.alt = "Our memory " + (idx + 1);
+        letterImage.style.display = "block";
+      } else {
+        letterVideo.src = letter.file;
+        letterVideo.style.display = "block";
+      }
+      
+      letterText.textContent = letter.text;
+      letterCounter.textContent = (idx + 1) + " / " + loveLetters.length + " · from my heart";
+
+      const isLast = idx === loveLetters.length - 1;
+      nextLetterLabel.textContent = isLast ? "My Forever" : "Next";
+      nextArrowIcon.classList.toggle("hidden", isLast);
+      infinityIcon.classList.toggle("hidden", !isLast);
+      
+      // If this is the last slide, unlock the collage
+      if (isLast) {
+        collageWrapper.classList.remove("collage-locked");
+      }
+    }
+
+    nextLetterBtn.addEventListener("click", () => {
+      if (currentLetterIdx >= loveLetters.length - 1) return;
+
+      letterPhoto.classList.add("fade-out");
+      letterTextBox.classList.add("fade-out");
+
+      setTimeout(() => {
+        currentLetterIdx++;
+        updateLetterCard(currentLetterIdx);
+        letterPhoto.classList.remove("fade-out");
+        letterTextBox.classList.remove("fade-out");
+      }, 350);
+    });
+
+    // ---------- COLLAGE RENDERER ----------
+    function renderCollage() {
+      const grid = document.getElementById("collageGrid");
+      grid.innerHTML = "";
+
+      collageImages.forEach((item, i) => {
+        const card = document.createElement("div");
+        card.className = "memory-card " + item.span;
+        card.style.animation = "staggerIn 0.5s ease both";
+        card.style.animationDelay = (i * 0.07) + "s";
+
+        const img = document.createElement("img");
+        img.src = item.src;
+        img.alt = item.caption;
+        img.loading = "lazy";
+
+        const caption = document.createElement("div");
+        caption.className = "caption-overlay";
+        caption.textContent = item.caption;
+
+        card.appendChild(img);
+        card.appendChild(caption);
+
+        card.addEventListener("click", () => { 
+          if (!collageWrapper.classList.contains("collage-locked")) {
+            openLightbox(i); 
+          }
+        });
+
+        grid.appendChild(card);
+      });
+    }
+
+    // ---------- LIGHTBOX ----------
+    function openLightbox(idx) {
+      currentLbIdx = idx;
+      const item = collageImages[idx];
+      lightboxImage.src = item.src;
+      lightboxImage.alt = item.caption;
+      lightboxCaption.textContent = item.caption;
+      lbCounter.textContent = (idx + 1) + " / " + collageImages.length;
+      lightbox.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    function navigateLb(dir) {
+      currentLbIdx = (currentLbIdx + dir + collageImages.length) % collageImages.length;
+      const item = collageImages[currentLbIdx];
+      lightboxImage.src = item.src;
+      lightboxImage.alt = item.caption;
+      lightboxCaption.textContent = item.caption;
+      lbCounter.textContent = (currentLbIdx + 1) + " / " + collageImages.length;
+    }
+
+    document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+    document.getElementById("lbPrev").addEventListener("click", () => navigateLb(-1));
+    document.getElementById("lbNext").addEventListener("click", () => navigateLb(1));
+
+    document.addEventListener("keydown", (e) => {
+      if (!lightbox.classList.contains("active")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") navigateLb(-1);
+      if (e.key === "ArrowRight") navigateLb(1);
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    let touchStartX = 0;
+    lightbox.addEventListener("touchstart", (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+    lightbox.addEventListener("touchend", (e) => {
+      const diff = e.changedTouches[0].screenX - touchStartX;
+      if (Math.abs(diff) > 50) {
+        navigateLb(diff > 0 ? -1 : 1);
+      }
+    }, { passive: true });
+
+    // ---------- INITIAL ----------
+    loadTrack(0);
+  }
+
+  // Store init function to be called when countdown reaches zero
+  window.valentineInit = initApp;
+  
+  // If it's already Valentine's Day, initialize immediately
+  if (new Date().getTime() >= targetTime) {
+    countdownPhase.classList.add('hidden');
+    vaultPhase.classList.remove('hidden');
+    initApp();
+    setTimeout(() => {
+      document.getElementById('passInput')?.focus();
+    }, 400);
+  }
+})();
+</script>
+
+<!-- 
+  FILE REQUIREMENTS - PLACE THESE FILES IN THE SAME DIRECTORY:
+  ------------------------------------------------------------
+  🔑 PASSWORD: "baddie" (hint: Your pet name)
+  
+  📹 INTRO VIDEO:
+  - intro.mp4
+  
+  🎵 AUDIO TRACKS:
+  - Track1.mp3 through Track5.mp3
+  
+  🎬 LOVE LETTER SEQUENCE (7 slides):
+  - videoslide1.mp4
+  - videoslide2.mp4
+  - videoslide3.mp4
+  - imageslide1.jpeg
+  - imageslide2.jpeg
+  - imageslide3.jpeg
+  - imageslide4.jpeg
+  
+  🖼️ COLLAGE IMAGES (unlocked after all 7 slides are viewed):
+  - image1.jpeg through image15.jpeg
+  
+  ⏰ COUNTDOWN: Website unlocks on February 14th
+  🔒 COLLAGE: Only accessible after completing all 7 love letter slides
+-->
+</body>
+</html>
