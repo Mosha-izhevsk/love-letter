@@ -73,96 +73,6 @@
       padding: 1.5rem;
     }
 
-    /* ---- COUNTDOWN SECTION ---- */
-    .countdown-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 70vh;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    .countdown-title {
-      color: var(--accent);
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      text-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary-light);
-      margin-bottom: 0.5rem;
-    }
-
-    .countdown-subtitle {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      margin-bottom: 2.5rem;
-      font-style: italic;
-    }
-
-    .countdown-hearts {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      color: var(--accent);
-    }
-
-    .countdown-hearts svg {
-      width: 32px;
-      height: 32px;
-      fill: var(--accent);
-    }
-
-    .countdown-timer {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 2.5rem;
-    }
-
-    .time-block {
-      background: rgba(128, 0, 32, 0.2);
-      border: 1px solid var(--primary);
-      border-radius: var(--radius-lg);
-      padding: 1rem 1.5rem;
-      min-width: 80px;
-      backdrop-filter: blur(8px);
-    }
-
-    .time-number {
-      color: var(--accent);
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1;
-    }
-
-    .time-label {
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .countdown-message {
-      color: var(--text-muted);
-      font-size: 1rem;
-      max-width: 400px;
-      margin: 0 auto;
-      background: rgba(10, 10, 10, 0.6);
-      padding: 1.2rem;
-      border-radius: var(--radius-full);
-      border: 1px dashed var(--primary);
-    }
-
-    .countdown-message i {
-      color: var(--accent);
-      font-style: normal;
-      font-weight: 600;
-    }
-
     /* ---- Animations ---- */
     @keyframes float-heart {
       0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
@@ -317,7 +227,7 @@
     .letter-text-box { padding: 1.2rem; }
     .letter-text-box p { font-size: 1rem; }
 
-    /* ---- COLLAGE (hidden until all 7 slides are viewed) ---- */
+    /* ---- COLLAGE (locked until all 7 slides are viewed) ---- */
     .collage-wrapper {
       transition: opacity 0.5s ease;
     }
@@ -446,34 +356,8 @@
 <div class="main-container">
   <div class="love-letter-box">
 
-    <!-- ===== COUNTDOWN SECTION ===== -->
-    <div id="countdownPhase">
-      <div class="countdown-section">
-        <div class="countdown-hearts">
-          <svg viewBox="0 0 24 24" class="animate-float"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          <svg viewBox="0 0 24 24" class="animate-float-d1"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          <svg viewBox="0 0 24 24" class="animate-float-d2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
-        <h1 class="countdown-title">VALENTINE'S DAY</h1>
-        <p class="countdown-subtitle">A special message is waiting for you</p>
-        
-        <div class="countdown-timer" id="countdownTimer">
-          <div class="time-block"><span class="time-number" id="days">00</span><span class="time-label">Days</span></div>
-          <div class="time-block"><span class="time-number" id="hours">00</span><span class="time-label">Hours</span></div>
-          <div class="time-block"><span class="time-number" id="minutes">00</span><span class="time-label">Minutes</span></div>
-          <div class="time-block"><span class="time-number" id="seconds">00</span><span class="time-label">Seconds</span></div>
-        </div>
-        
-        <div class="countdown-message">
-          <i class="fas fa-heart" style="color:var(--accent)"></i> 
-          This love letter will unlock on February 14th 
-          <i class="fas fa-heart" style="color:var(--accent)"></i>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== PHASE 1: VAULT ===== -->
-    <div id="vaultPhase" class="hidden">
+    <!-- ===== PHASE 1: VAULT (shown immediately) ===== -->
+    <div id="vaultPhase">
       <div class="vault-card animate-pulse-glow">
         <div class="floating-hearts">
           <svg class="icon icon-md icon-filled animate-float" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -641,393 +525,326 @@
 (function() {
   "use strict";
 
-  // ========== VALENTINE'S DAY COUNTDOWN ==========
-  const now = new Date();
-  let targetYear = now.getFullYear();
-  const targetDate = new Date(targetYear, 1, 14); // February 14
-  
-  if (now > targetDate) {
-    targetYear++;
-    targetDate.setFullYear(targetYear);
-  }
-  
-  const targetTime = targetDate.getTime();
+  const SECRET_PASS = "baddie";
 
-  const countdownPhase = document.getElementById('countdownPhase');
-  const vaultPhase = document.getElementById('vaultPhase');
-  const videoPhase = document.getElementById('videoPhase');
-  const galleryPhase = document.getElementById('galleryPhase');
-  
-  const daysEl = document.getElementById('days');
-  const hoursEl = document.getElementById('hours');
-  const minutesEl = document.getElementById('minutes');
-  const secondsEl = document.getElementById('seconds');
+  // ---------- LOVE LETTER SEQUENCE (7 slides) ----------
+  const loveLetters = [
+    { type: "video", file: "videoslide1.mp4", text: "Every moment with you is a treasure. This is the beginning of our story." },
+    { type: "video", file: "videoslide2.mp4", text: "You walked into my life and painted it with golden light." },
+    { type: "video", file: "videoslide3.mp4", text: "Your smile, your laugh, your heart — everything about you is beautiful." },
+    { type: "image", file: "imageslide1.jpeg", text: "Baby girl our love may have started in the comment section but to my heart you belong in the vvvvvip section part of my heart, as the sole resident sweetheart." },
+    { type: "image", file: "imageslide2.jpeg", text: "Every notification from you makes my world stop. You turned a simple comment into a lifetime of meaning." },
+    { type: "image", file: "imageslide3.jpeg", text: "Your laugh is the soundtrack of my favorite days. Your strength is my anchor." },
+    { type: "image", file: "imageslide4.jpeg", text: "You shaped my heart into something I never knew it could be. Forever grateful, forever yours." }
+  ];
 
-  let countdownInterval;
-
-  function updateCountdown() {
-    const currentTime = new Date().getTime();
-    const diff = targetTime - currentTime;
+  // ---------- COLLAGE IMAGES - image1.jpeg to image15.jpeg ----------
+  const collageImages = [];
+  for (let i = 1; i <= 15; i++) {
+    let caption = "";
+    if (i === 1) caption = "✨ the moment i saw you · baddie aura";
+    else if (i === 2) caption = "🌙 you listened · my heart shifted";
+    else if (i === 3) caption = "🖤 your laugh · burgundy wine";
+    else if (i === 4) caption = "📖 you shaped my dreams";
+    else if (i === 5) caption = "💛 you + me · golden hour";
+    else if (i === 6) caption = "🥀 your strength · my anchor";
+    else if (i === 7) caption = "♾️ baddie · my universe";
+    else if (i === 8) caption = "💖 forever and always";
+    else if (i === 9) caption = "🌹 our love story";
+    else if (i === 10) caption = "💫 you complete me";
+    else if (i === 11) caption = "✨ my everything";
+    else if (i === 12) caption = "💕 always and forever";
+    else if (i === 13) caption = "🌟 my sunshine";
+    else if (i === 14) caption = "💝 my heart is yours";
+    else if (i === 15) caption = "💞 eternally grateful";
     
-    if (diff <= 0) {
-      countdownPhase.classList.add('hidden');
-      vaultPhase.classList.remove('hidden');
-      clearInterval(countdownInterval);
-      // Initialize the app
-      if (window.valentineInit) {
-        window.valentineInit();
-      }
+    let span = "mc-standard";
+    if (i === 1) span = "mc-feature";
+    else if (i === 2 || i === 6) span = "mc-tall";
+    else if (i === 4 || i === 5 || i === 8) span = "mc-wide-short";
+    else if (i === 7) span = "mc-wide-short";
+    
+    collageImages.push({
+      src: "image" + i + ".jpeg",
+      caption: caption,
+      span: span
+    });
+  }
+
+  // ---------- AUDIO TRACKS ----------
+  const tracks = [
+    { name: "Track 1 - our melody", file: "Track1.mp3" },
+    { name: "Track 2 - heartbeat",  file: "Track2.mp3" },
+    { name: "Track 3 - memories",   file: "Track3.mp3" },
+    { name: "Track 4 - forever",    file: "Track4.mp3" },
+    { name: "Track 5 - you and me", file: "Track5.mp3" }
+  ];
+
+  // ---------- ELEMENTS ----------
+  const vaultPhase = document.getElementById("vaultPhase");
+  const videoPhase = document.getElementById("videoPhase");
+  const galleryPhase = document.getElementById("galleryPhase");
+  const passInput = document.getElementById("passInput");
+  const unlockBtn = document.getElementById("unlockBtn");
+  const errorMsg = document.getElementById("errorMsg");
+  const introVideo = document.getElementById("introVideo");
+  const continueBtn = document.getElementById("continueBtn");
+
+  const audioEl = document.getElementById("audioElement");
+  const trackNameEl = document.getElementById("trackName");
+  const progressFill = document.getElementById("progressFill");
+  const playIcon = document.getElementById("playIcon");
+  const pauseIcon = document.getElementById("pauseIcon");
+
+  const letterPhoto = document.getElementById("letterPhoto");
+  const letterImage = document.getElementById("letterImage");
+  const letterVideo = document.getElementById("letterVideo");
+  const letterText = document.getElementById("letterText");
+  const letterTextBox = document.getElementById("letterTextBox");
+  const nextLetterBtn = document.getElementById("nextLetterBtn");
+  const nextLetterLabel = document.getElementById("nextLetterLabel");
+  const nextArrowIcon = document.getElementById("nextArrowIcon");
+  const infinityIcon = document.getElementById("infinityIcon");
+  const letterCounter = document.getElementById("letterCounter");
+
+  const collageWrapper = document.getElementById("collageWrapper");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const lightboxCaption = document.getElementById("lightboxCaption");
+  const lbCounter = document.getElementById("lbCounter");
+
+  // ---------- STATE ----------
+  let currentLetterIdx = 0;
+  let currentTrackIdx = 0;
+  let isPlaying = false;
+  let currentLbIdx = 0;
+
+  // ---------- PHASE TRANSITIONS ----------
+  function showPhase(target) {
+    [vaultPhase, videoPhase, galleryPhase].forEach(el => {
+      if (el !== target) el.classList.add("hidden");
+    });
+    target.classList.remove("hidden");
+  }
+
+  // ---------- VAULT UNLOCK ----------
+  function unlock() {
+    const val = passInput.value.trim().toLowerCase();
+    if (val === SECRET_PASS) {
+      errorMsg.textContent = "";
+      vaultPhase.classList.add("phase-exit");
       setTimeout(() => {
-        document.getElementById('passInput')?.focus();
+        showPhase(videoPhase);
+        introVideo.play().catch(() => {});
       }, 400);
-      return;
+    } else {
+      errorMsg.textContent = "Not quite... hint: Your pet name";
+      passInput.value = "";
     }
-    
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    
-    daysEl.textContent = days.toString().padStart(2, '0');
-    hoursEl.textContent = hours.toString().padStart(2, '0');
-    minutesEl.textContent = minutes.toString().padStart(2, '0');
-    secondsEl.textContent = seconds.toString().padStart(2, '0');
   }
-  
-  countdownInterval = setInterval(updateCountdown, 1000);
-  updateCountdown();
 
-  // ========== MAIN APPLICATION (runs after countdown) ==========
-  function initApp() {
-    const SECRET_PASS = "baddie";
+  unlockBtn.addEventListener("click", unlock);
+  passInput.addEventListener("keydown", e => { if (e.key === "Enter") unlock(); });
+  passInput.addEventListener("input", () => { errorMsg.textContent = ""; });
+  passInput.focus();
 
-    // ---------- LOVE LETTER SEQUENCE (7 slides) ----------
-    const loveLetters = [
-      { type: "video", file: "videoslide1.mp4", text: "Every moment with you is a treasure. This is the beginning of our story." },
-      { type: "video", file: "videoslide2.mp4", text: "You walked into my life and painted it with golden light." },
-      { type: "video", file: "videoslide3.mp4", text: "Your smile, your laugh, your heart — everything about you is beautiful." },
-      { type: "image", file: "imageslide1.jpeg", text: "Baby girl our love may have started in the comment section but to my heart you belong in the vvvvvip section part of my heart, as the sole resident sweetheart." },
-      { type: "image", file: "imageslide2.jpeg", text: "Every notification from you makes my world stop. You turned a simple comment into a lifetime of meaning." },
-      { type: "image", file: "imageslide3.jpeg", text: "Your laugh is the soundtrack of my favorite days. Your strength is my anchor." },
-      { type: "image", file: "imageslide4.jpeg", text: "You shaped my heart into something I never knew it could be. Forever grateful, forever yours." }
-    ];
-
-    // ---------- COLLAGE IMAGES - image1.jpeg to image15.jpeg ----------
-    const collageImages = [];
-    for (let i = 1; i <= 15; i++) {
-      let caption = "";
-      if (i === 1) caption = "✨ the moment i saw you · baddie aura";
-      else if (i === 2) caption = "🌙 you listened · my heart shifted";
-      else if (i === 3) caption = "🖤 your laugh · burgundy wine";
-      else if (i === 4) caption = "📖 you shaped my dreams";
-      else if (i === 5) caption = "💛 you + me · golden hour";
-      else if (i === 6) caption = "🥀 your strength · my anchor";
-      else if (i === 7) caption = "♾️ baddie · my universe";
-      else if (i === 8) caption = "💖 forever and always";
-      else if (i === 9) caption = "🌹 our love story";
-      else if (i === 10) caption = "💫 you complete me";
-      else if (i === 11) caption = "✨ my everything";
-      else if (i === 12) caption = "💕 always and forever";
-      else if (i === 13) caption = "🌟 my sunshine";
-      else if (i === 14) caption = "💝 my heart is yours";
-      else if (i === 15) caption = "💞 eternally grateful";
-      
-      let span = "mc-standard";
-      if (i === 1) span = "mc-feature";
-      else if (i === 2 || i === 6) span = "mc-tall";
-      else if (i === 4 || i === 5 || i === 8) span = "mc-wide-short";
-      else if (i === 7) span = "mc-wide-short";
-      
-      collageImages.push({
-        src: "image" + i + ".jpeg",
-        caption: caption,
-        span: span
-      });
-    }
-
-    // ---------- AUDIO TRACKS ----------
-    const tracks = [
-      { name: "Track 1 - our melody", file: "Track1.mp3" },
-      { name: "Track 2 - heartbeat",  file: "Track2.mp3" },
-      { name: "Track 3 - memories",   file: "Track3.mp3" },
-      { name: "Track 4 - forever",    file: "Track4.mp3" },
-      { name: "Track 5 - you and me", file: "Track5.mp3" }
-    ];
-
-    // ---------- ELEMENTS ----------
-    const passInput = document.getElementById("passInput");
-    const unlockBtn = document.getElementById("unlockBtn");
-    const errorMsg = document.getElementById("errorMsg");
-    const introVideo = document.getElementById("introVideo");
-    const continueBtn = document.getElementById("continueBtn");
-
-    const audioEl = document.getElementById("audioElement");
-    const trackNameEl = document.getElementById("trackName");
-    const progressFill = document.getElementById("progressFill");
-    const playIcon = document.getElementById("playIcon");
-    const pauseIcon = document.getElementById("pauseIcon");
-
-    const letterPhoto = document.getElementById("letterPhoto");
-    const letterImage = document.getElementById("letterImage");
-    const letterVideo = document.getElementById("letterVideo");
-    const letterText = document.getElementById("letterText");
-    const letterTextBox = document.getElementById("letterTextBox");
-    const nextLetterBtn = document.getElementById("nextLetterBtn");
-    const nextLetterLabel = document.getElementById("nextLetterLabel");
-    const nextArrowIcon = document.getElementById("nextArrowIcon");
-    const infinityIcon = document.getElementById("infinityIcon");
-    const letterCounter = document.getElementById("letterCounter");
-
-    const collageWrapper = document.getElementById("collageWrapper");
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImage = document.getElementById("lightboxImage");
-    const lightboxCaption = document.getElementById("lightboxCaption");
-    const lbCounter = document.getElementById("lbCounter");
-
-    // ---------- STATE ----------
-    let currentLetterIdx = 0;
-    let currentTrackIdx = 0;
-    let isPlaying = false;
-    let currentLbIdx = 0;
-
-    // ---------- PHASE TRANSITIONS ----------
-    function showPhase(target) {
-      [vaultPhase, videoPhase, galleryPhase].forEach(el => {
-        if (el !== target) el.classList.add("hidden");
-      });
-      target.classList.remove("hidden");
-    }
-
-    // ---------- VAULT UNLOCK ----------
-    function unlock() {
-      const val = passInput.value.trim().toLowerCase();
-      if (val === SECRET_PASS) {
-        errorMsg.textContent = "";
-        vaultPhase.classList.add("phase-exit");
-        setTimeout(() => {
-          showPhase(videoPhase);
-          introVideo.play().catch(() => {});
-        }, 400);
-      } else {
-        errorMsg.textContent = "Not quite... hint: Your pet name";
-        passInput.value = "";
-      }
-    }
-
-    unlockBtn.addEventListener("click", unlock);
-    passInput.addEventListener("keydown", e => { if (e.key === "Enter") unlock(); });
-    passInput.addEventListener("input", () => { errorMsg.textContent = ""; });
-
-    // ---------- VIDEO -> GALLERY ----------
-    function goToGallery() {
-      introVideo.pause();
-      showPhase(galleryPhase);
-      galleryPhase.scrollIntoView({ behavior: "smooth", block: "start" });
-      renderCollage();
-      updateLetterCard(0);
-      loadTrack(0);
-      playTrack();
-    }
-
-    continueBtn.addEventListener("click", goToGallery);
-    introVideo.addEventListener("ended", goToGallery);
-
-    // ---------- AUDIO PLAYER ----------
-    function loadTrack(idx) {
-      currentTrackIdx = idx;
-      audioEl.src = tracks[idx].file;
-      audioEl.load();
-      trackNameEl.textContent = tracks[idx].name;
-      progressFill.style.width = "0%";
-    }
-
-    function playTrack() {
-      audioEl.play().then(() => {
-        isPlaying = true;
-        playIcon.classList.add("hidden");
-        pauseIcon.classList.remove("hidden");
-      }).catch(() => {});
-    }
-
-    function pauseTrack() {
-      audioEl.pause();
-      isPlaying = false;
-      pauseIcon.classList.add("hidden");
-      playIcon.classList.remove("hidden");
-    }
-
-    document.getElementById("playPauseBtn").addEventListener("click", () => {
-      isPlaying ? pauseTrack() : playTrack();
-    });
-
-    document.getElementById("nextBtn").addEventListener("click", () => {
-      const idx = (currentTrackIdx + 1) % tracks.length;
-      loadTrack(idx);
-      if (isPlaying) setTimeout(playTrack, 100);
-    });
-
-    document.getElementById("prevBtn").addEventListener("click", () => {
-      const idx = (currentTrackIdx - 1 + tracks.length) % tracks.length;
-      loadTrack(idx);
-      if (isPlaying) setTimeout(playTrack, 100);
-    });
-
-    audioEl.addEventListener("timeupdate", () => {
-      if (audioEl.duration) {
-        progressFill.style.width = (audioEl.currentTime / audioEl.duration * 100) + "%";
-      }
-    });
-
-    audioEl.addEventListener("ended", () => {
-      const idx = (currentTrackIdx + 1) % tracks.length;
-      loadTrack(idx);
-      setTimeout(playTrack, 100);
-    });
-
-    // ---------- LOVE LETTER SEQUENCE ----------
-    function updateLetterCard(idx) {
-      const letter = loveLetters[idx];
-      
-      letterImage.style.display = "none";
-      letterVideo.style.display = "none";
-      letterVideo.pause();
-      
-      if (letter.type === "image") {
-        letterImage.src = letter.file;
-        letterImage.alt = "Our memory " + (idx + 1);
-        letterImage.style.display = "block";
-      } else {
-        letterVideo.src = letter.file;
-        letterVideo.style.display = "block";
-      }
-      
-      letterText.textContent = letter.text;
-      letterCounter.textContent = (idx + 1) + " / " + loveLetters.length + " · from my heart";
-
-      const isLast = idx === loveLetters.length - 1;
-      nextLetterLabel.textContent = isLast ? "My Forever" : "Next";
-      nextArrowIcon.classList.toggle("hidden", isLast);
-      infinityIcon.classList.toggle("hidden", !isLast);
-      
-      // If this is the last slide, unlock the collage
-      if (isLast) {
-        collageWrapper.classList.remove("collage-locked");
-      }
-    }
-
-    nextLetterBtn.addEventListener("click", () => {
-      if (currentLetterIdx >= loveLetters.length - 1) return;
-
-      letterPhoto.classList.add("fade-out");
-      letterTextBox.classList.add("fade-out");
-
-      setTimeout(() => {
-        currentLetterIdx++;
-        updateLetterCard(currentLetterIdx);
-        letterPhoto.classList.remove("fade-out");
-        letterTextBox.classList.remove("fade-out");
-      }, 350);
-    });
-
-    // ---------- COLLAGE RENDERER ----------
-    function renderCollage() {
-      const grid = document.getElementById("collageGrid");
-      grid.innerHTML = "";
-
-      collageImages.forEach((item, i) => {
-        const card = document.createElement("div");
-        card.className = "memory-card " + item.span;
-        card.style.animation = "staggerIn 0.5s ease both";
-        card.style.animationDelay = (i * 0.07) + "s";
-
-        const img = document.createElement("img");
-        img.src = item.src;
-        img.alt = item.caption;
-        img.loading = "lazy";
-
-        const caption = document.createElement("div");
-        caption.className = "caption-overlay";
-        caption.textContent = item.caption;
-
-        card.appendChild(img);
-        card.appendChild(caption);
-
-        card.addEventListener("click", () => { 
-          if (!collageWrapper.classList.contains("collage-locked")) {
-            openLightbox(i); 
-          }
-        });
-
-        grid.appendChild(card);
-      });
-    }
-
-    // ---------- LIGHTBOX ----------
-    function openLightbox(idx) {
-      currentLbIdx = idx;
-      const item = collageImages[idx];
-      lightboxImage.src = item.src;
-      lightboxImage.alt = item.caption;
-      lightboxCaption.textContent = item.caption;
-      lbCounter.textContent = (idx + 1) + " / " + collageImages.length;
-      lightbox.classList.add("active");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove("active");
-      document.body.style.overflow = "";
-    }
-
-    function navigateLb(dir) {
-      currentLbIdx = (currentLbIdx + dir + collageImages.length) % collageImages.length;
-      const item = collageImages[currentLbIdx];
-      lightboxImage.src = item.src;
-      lightboxImage.alt = item.caption;
-      lightboxCaption.textContent = item.caption;
-      lbCounter.textContent = (currentLbIdx + 1) + " / " + collageImages.length;
-    }
-
-    document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
-    document.getElementById("lbPrev").addEventListener("click", () => navigateLb(-1));
-    document.getElementById("lbNext").addEventListener("click", () => navigateLb(1));
-
-    document.addEventListener("keydown", (e) => {
-      if (!lightbox.classList.contains("active")) return;
-      if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowLeft") navigateLb(-1);
-      if (e.key === "ArrowRight") navigateLb(1);
-    });
-
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
-
-    let touchStartX = 0;
-    lightbox.addEventListener("touchstart", (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-    lightbox.addEventListener("touchend", (e) => {
-      const diff = e.changedTouches[0].screenX - touchStartX;
-      if (Math.abs(diff) > 50) {
-        navigateLb(diff > 0 ? -1 : 1);
-      }
-    }, { passive: true });
-
-    // ---------- INITIAL ----------
+  // ---------- VIDEO -> GALLERY ----------
+  function goToGallery() {
+    introVideo.pause();
+    showPhase(galleryPhase);
+    galleryPhase.scrollIntoView({ behavior: "smooth", block: "start" });
+    renderCollage();
+    updateLetterCard(0);
     loadTrack(0);
+    playTrack();
   }
 
-  // Store init function to be called when countdown reaches zero
-  window.valentineInit = initApp;
-  
-  // If it's already Valentine's Day, initialize immediately
-  if (new Date().getTime() >= targetTime) {
-    countdownPhase.classList.add('hidden');
-    vaultPhase.classList.remove('hidden');
-    initApp();
-    setTimeout(() => {
-      document.getElementById('passInput')?.focus();
-    }, 400);
+  continueBtn.addEventListener("click", goToGallery);
+  introVideo.addEventListener("ended", goToGallery);
+
+  // ---------- AUDIO PLAYER ----------
+  function loadTrack(idx) {
+    currentTrackIdx = idx;
+    audioEl.src = tracks[idx].file;
+    audioEl.load();
+    trackNameEl.textContent = tracks[idx].name;
+    progressFill.style.width = "0%";
   }
+
+  function playTrack() {
+    audioEl.play().then(() => {
+      isPlaying = true;
+      playIcon.classList.add("hidden");
+      pauseIcon.classList.remove("hidden");
+    }).catch(() => {});
+  }
+
+  function pauseTrack() {
+    audioEl.pause();
+    isPlaying = false;
+    pauseIcon.classList.add("hidden");
+    playIcon.classList.remove("hidden");
+  }
+
+  document.getElementById("playPauseBtn").addEventListener("click", () => {
+    isPlaying ? pauseTrack() : playTrack();
+  });
+
+  document.getElementById("nextBtn").addEventListener("click", () => {
+    const idx = (currentTrackIdx + 1) % tracks.length;
+    loadTrack(idx);
+    if (isPlaying) setTimeout(playTrack, 100);
+  });
+
+  document.getElementById("prevBtn").addEventListener("click", () => {
+    const idx = (currentTrackIdx - 1 + tracks.length) % tracks.length;
+    loadTrack(idx);
+    if (isPlaying) setTimeout(playTrack, 100);
+  });
+
+  audioEl.addEventListener("timeupdate", () => {
+    if (audioEl.duration) {
+      progressFill.style.width = (audioEl.currentTime / audioEl.duration * 100) + "%";
+    }
+  });
+
+  audioEl.addEventListener("ended", () => {
+    const idx = (currentTrackIdx + 1) % tracks.length;
+    loadTrack(idx);
+    setTimeout(playTrack, 100);
+  });
+
+  // ---------- LOVE LETTER SEQUENCE ----------
+  function updateLetterCard(idx) {
+    const letter = loveLetters[idx];
+    
+    letterImage.style.display = "none";
+    letterVideo.style.display = "none";
+    letterVideo.pause();
+    
+    if (letter.type === "image") {
+      letterImage.src = letter.file;
+      letterImage.alt = "Our memory " + (idx + 1);
+      letterImage.style.display = "block";
+    } else {
+      letterVideo.src = letter.file;
+      letterVideo.style.display = "block";
+    }
+    
+    letterText.textContent = letter.text;
+    letterCounter.textContent = (idx + 1) + " / " + loveLetters.length + " · from my heart";
+
+    const isLast = idx === loveLetters.length - 1;
+    nextLetterLabel.textContent = isLast ? "My Forever" : "Next";
+    nextArrowIcon.classList.toggle("hidden", isLast);
+    infinityIcon.classList.toggle("hidden", !isLast);
+    
+    // If this is the last slide, unlock the collage
+    if (isLast) {
+      collageWrapper.classList.remove("collage-locked");
+    }
+  }
+
+  nextLetterBtn.addEventListener("click", () => {
+    if (currentLetterIdx >= loveLetters.length - 1) return;
+
+    letterPhoto.classList.add("fade-out");
+    letterTextBox.classList.add("fade-out");
+
+    setTimeout(() => {
+      currentLetterIdx++;
+      updateLetterCard(currentLetterIdx);
+      letterPhoto.classList.remove("fade-out");
+      letterTextBox.classList.remove("fade-out");
+    }, 350);
+  });
+
+  // ---------- COLLAGE RENDERER ----------
+  function renderCollage() {
+    const grid = document.getElementById("collageGrid");
+    grid.innerHTML = "";
+
+    collageImages.forEach((item, i) => {
+      const card = document.createElement("div");
+      card.className = "memory-card " + item.span;
+      card.style.animation = "staggerIn 0.5s ease both";
+      card.style.animationDelay = (i * 0.07) + "s";
+
+      const img = document.createElement("img");
+      img.src = item.src;
+      img.alt = item.caption;
+      img.loading = "lazy";
+
+      const caption = document.createElement("div");
+      caption.className = "caption-overlay";
+      caption.textContent = item.caption;
+
+      card.appendChild(img);
+      card.appendChild(caption);
+
+      card.addEventListener("click", () => { 
+        if (!collageWrapper.classList.contains("collage-locked")) {
+          openLightbox(i); 
+        }
+      });
+
+      grid.appendChild(card);
+    });
+  }
+
+  // ---------- LIGHTBOX ----------
+  function openLightbox(idx) {
+    currentLbIdx = idx;
+    const item = collageImages[idx];
+    lightboxImage.src = item.src;
+    lightboxImage.alt = item.caption;
+    lightboxCaption.textContent = item.caption;
+    lbCounter.textContent = (idx + 1) + " / " + collageImages.length;
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  function navigateLb(dir) {
+    currentLbIdx = (currentLbIdx + dir + collageImages.length) % collageImages.length;
+    const item = collageImages[currentLbIdx];
+    lightboxImage.src = item.src;
+    lightboxImage.alt = item.caption;
+    lightboxCaption.textContent = item.caption;
+    lbCounter.textContent = (currentLbIdx + 1) + " / " + collageImages.length;
+  }
+
+  document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+  document.getElementById("lbPrev").addEventListener("click", () => navigateLb(-1));
+  document.getElementById("lbNext").addEventListener("click", () => navigateLb(1));
+
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("active")) return;
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft") navigateLb(-1);
+    if (e.key === "ArrowRight") navigateLb(1);
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  let touchStartX = 0;
+  lightbox.addEventListener("touchstart", (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  lightbox.addEventListener("touchend", (e) => {
+    const diff = e.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(diff) > 50) {
+      navigateLb(diff > 0 ? -1 : 1);
+    }
+  }, { passive: true });
+
+  // ---------- INITIAL ----------
+  loadTrack(0);
+  pauseTrack(); // Don't play until after Continue
 })();
 </script>
 
@@ -1054,7 +871,6 @@
   🖼️ COLLAGE IMAGES (unlocked after all 7 slides are viewed):
   - image1.jpeg through image15.jpeg
   
-  ⏰ COUNTDOWN: Website unlocks on February 14th
   🔒 COLLAGE: Only accessible after completing all 7 love letter slides
 -->
 </body>
