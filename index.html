@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <meta name="theme-color" content="#800020">
   <title>For Ndivhuwo - My Baddie</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +39,7 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      padding: 1rem;
+      padding: 2rem 1rem;
       color: var(--text);
       -webkit-font-smoothing: antialiased;
     }
@@ -59,7 +59,7 @@
       position: relative;
       z-index: 1;
       width: 100%;
-      max-width: 600px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
@@ -68,9 +68,9 @@
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1.5px solid var(--primary);
-      border-radius: var(--radius-lg);
+      border-radius: var(--radius-xl);
       box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 215, 0, 0.08);
-      padding: 1.5rem;
+      padding: 2.5rem 2rem;
     }
 
     /* ---- Animations ---- */
@@ -117,119 +117,156 @@
     .icon-filled { fill: currentColor; }
 
     /* ---- VAULT ---- */
-    .vault-section { max-width: 100%; margin: 0 auto; }
+    .vault-section { max-width: 560px; margin: 0 auto; }
     .vault-card {
       border-radius: var(--radius-lg);
       border: 2px solid var(--primary);
       background: var(--card);
-      padding: 1.8rem 1.2rem;
+      padding: 2.5rem 2rem;
       text-align: center;
       box-shadow: 0 20px 40px rgba(0,0,0,0.6);
     }
-    .floating-hearts { display: flex; justify-content: center; gap: 1rem; margin-bottom: 0.8rem; color: var(--accent); }
+    .floating-hearts { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; color: var(--accent); }
     .badge {
       display: inline-flex; align-items: center; gap: 0.5rem;
       border-radius: var(--radius-full); border: 1px dashed var(--accent);
-      background: rgba(128, 0, 32, 0.25); padding: 0.4rem 1rem;
-      color: var(--text-muted); font-weight: 500; font-size: 0.8rem; margin-bottom: 0.8rem;
+      background: rgba(128, 0, 32, 0.25); padding: 0.5rem 1.25rem;
+      color: var(--text-muted); font-weight: 500; font-size: 0.9rem; margin-bottom: 1rem;
     }
     .vault-title {
-      color: var(--accent); font-weight: 700; font-size: 2rem;
-      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); font-weight: 700; font-size: 2.5rem;
+      letter-spacing: 0.25em; text-transform: uppercase;
       text-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary-light);
       margin-bottom: 0.5rem;
     }
-    .vault-lock-icon { color: var(--accent); opacity: 0.6; margin: 0.5rem 0; }
-    .vault-message { color: var(--text-muted); line-height: 1.5; font-size: 0.9rem; margin-bottom: 0.5rem; }
-    .vault-highlight { color: var(--accent); font-weight: 700; font-size: 1rem; margin-bottom: 0.8rem; }
-    .vault-quote { color: var(--text-muted); font-style: italic; font-size: 0.85rem; margin-bottom: 1.2rem; }
-    .password-row { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+    .vault-lock-icon { color: var(--accent); opacity: 0.6; margin: 0.75rem 0; }
+    .vault-message { color: var(--text-muted); line-height: 1.6; font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .vault-highlight { color: var(--accent); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; }
+    .vault-quote { color: var(--text-muted); font-style: italic; font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .password-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
     .password-input {
-      width: 100%; max-width: 280px; border-radius: var(--radius-full); border: 2px solid var(--primary);
-      background: var(--surface); padding: 0.85rem 1.2rem; color: var(--accent);
+      width: 220px; border-radius: var(--radius-full); border: 2px solid var(--primary);
+      background: var(--surface); padding: 0.85rem 1.5rem; color: var(--accent);
       font-weight: 600; letter-spacing: 3px; text-align: center; font-size: 1rem;
       font-family: inherit; outline: none; transition: all 0.25s;
     }
-    .password-input::placeholder { color: rgba(230, 197, 197, 0.4); letter-spacing: 2px; font-size: 0.9rem; }
+    .password-input::placeholder { color: rgba(230, 197, 197, 0.4); letter-spacing: 2px; }
     .password-input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.2); }
     .btn {
       display: inline-flex; align-items: center; gap: 0.75rem;
       border-radius: var(--radius-full); border: 2px solid var(--accent);
-      background: var(--primary); padding: 0.85rem 1.5rem; color: #fff;
+      background: var(--primary); padding: 0.85rem 1.75rem; color: #fff;
       font-weight: 700; font-size: 1rem; font-family: inherit;
       letter-spacing: 1px; cursor: pointer; transition: all 0.2s;
     }
     .btn:hover { background: var(--primary-light); box-shadow: 0 0 25px rgba(255, 215, 0, 0.3); transform: scale(1.02); }
     .btn:active { transform: scale(0.98); }
     .btn .icon { color: var(--accent); }
-    .btn-large { font-size: 1.1rem; padding: 0.9rem 2rem; letter-spacing: 2px; box-shadow: 0 6px 0 var(--primary-dark); }
+    .btn-large { font-size: 1.2rem; padding: 1rem 2.5rem; letter-spacing: 2px; box-shadow: 0 6px 0 var(--primary-dark); }
     .btn-large:hover { box-shadow: 0 0 30px rgba(255, 215, 0, 0.25), 0 6px 0 var(--primary-dark); transform: scale(1.03); }
     .hint-badge {
       display: inline-flex; align-items: center; gap: 0.5rem;
       border-radius: var(--radius-full); border: 1px solid var(--primary);
       background: rgba(128, 0, 32, 0.15); padding: 0.4rem 1rem;
-      color: var(--accent); font-size: 0.8rem;
+      color: var(--accent); font-size: 0.85rem;
     }
-    .error-message { min-height: 2rem; margin-top: 0.8rem; display: flex; align-items: center; justify-content: center; color: #ff6b6b; font-weight: 600; font-size: 0.85rem; }
+    .error-message { height: 2rem; margin-top: 1rem; display: flex; align-items: center; justify-content: center; color: #ff6b6b; font-weight: 600; font-size: 0.9rem; }
 
     /* ---- WELCOME ---- */
     .welcome-section {
       border-radius: var(--radius-lg); border: 2px solid var(--primary);
-      background: rgba(10, 10, 10, 0.9); padding: 1.2rem; text-align: center;
+      background: rgba(10, 10, 10, 0.9); padding: 2rem; text-align: center;
       backdrop-filter: blur(8px); box-shadow: 0 0 40px rgba(255, 215, 0, 0.12);
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
     .welcome-text {
-      color: var(--accent); font-size: 1rem; line-height: 1.6; font-weight: 500;
+      color: var(--accent); font-size: 1.15rem; line-height: 1.7; font-weight: 500;
       display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; gap: 0.4rem;
     }
-    .welcome-hearts { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-top: 0.8rem; color: var(--primary); }
+    .welcome-hearts { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-top: 1rem; color: var(--primary); }
 
     /* ---- VIDEO ---- */
     .video-section {
-      border-radius: 1.5rem; border: 1px solid rgba(255, 215, 0, 0.4);
-      background: var(--card); padding: 1rem; text-align: center;
-      box-shadow: inset 0 0 30px rgba(128, 0, 32, 0.3); margin-bottom: 1.5rem;
+      border-radius: 2rem; border: 1px solid rgba(255, 215, 0, 0.4);
+      background: var(--card); padding: 1.5rem 2rem; text-align: center;
+      box-shadow: inset 0 0 30px rgba(128, 0, 32, 0.3); margin-bottom: 2rem;
     }
     .video-inner {
       border-radius: var(--radius-md); border: 2px solid var(--primary);
-      background: rgba(28, 28, 28, 0.5); padding: 1.2rem;
-      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+      background: rgba(28, 28, 28, 0.5); padding: 2rem;
+      display: flex; flex-direction: column; align-items: center; gap: 1.25rem;
     }
-    .video-title { color: var(--accent); font-size: 1.3rem; font-weight: 600; letter-spacing: 2px; }
-    .video-subtitle { color: rgba(255, 215, 0, 0.8); font-size: 0.85rem; }
+    .video-icon { color: var(--accent); filter: drop-shadow(0 0 10px hsl(345, 100%, 40%)); }
+    .video-title { color: var(--accent); font-size: 1.6rem; font-weight: 600; letter-spacing: 2px; }
+    .video-subtitle { color: rgba(255, 215, 0, 0.8); font-size: 0.95rem; }
     .video-player-wrapper {
-      width: 100%; border-radius: 0.8rem;
-      background: var(--bg); padding: 0.3rem; border: 1.5px solid rgba(128, 0, 32, 0.5);
+      width: 100%; max-width: 560px; border-radius: 1rem;
+      background: var(--bg); padding: 0.5rem; border: 1.5px solid rgba(128, 0, 32, 0.5);
     }
-    .video-player-wrapper video { width: 100%; border-radius: 0.5rem; display: block; }
+    .video-player-wrapper video { width: 100%; border-radius: 0.75rem; display: block; }
+    .video-footer { display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-style: italic; font-size: 0.9rem; }
 
     /* ---- AUDIO ---- */
     .audio-bar {
       border-radius: var(--radius-full); border: 1px solid var(--primary);
-      background: var(--bg); padding: 0.6rem 1rem;
-      display: flex; align-items: center; flex-wrap: wrap;
-      gap: 0.75rem; margin-bottom: 1.5rem;
+      background: var(--bg); padding: 0.75rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
       box-shadow: 0 6px 0 hsl(345, 100%, 10%), 0 8px 25px rgba(0,0,0,0.6);
+      margin-bottom: 2rem;
     }
-    .track-name-pill { font-size: 0.8rem; padding: 0.3rem 0.8rem; }
-    .progress-bar { display: none; }
-    .audio-controls { margin-left: auto; }
+    .track-info { display: flex; align-items: center; gap: 0.75rem; }
+    .track-info .headphones-icon { color: var(--primary); filter: drop-shadow(0 0 6px #ff9999); }
+    .track-name-pill {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: var(--surface); padding: 0.4rem 1rem;
+      border-radius: var(--radius-full); border-left: 4px solid var(--accent);
+      font-size: 0.9rem; color: var(--accent-soft); font-weight: 500;
+    }
+    .progress-bar { flex: 1; max-width: 200px; height: 4px; border-radius: 2px; background: var(--surface); overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.2s; width: 0%; }
+    .audio-controls { display: flex; align-items: center; gap: 0.75rem; }
+    .audio-btn {
+      width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--primary);
+      background: transparent; color: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all 0.2s; font-family: inherit;
+    }
+    .audio-btn:hover { background: var(--primary); border-color: var(--accent); transform: scale(1.1); box-shadow: 0 0 15px rgba(255, 215, 0, 0.3); }
+    .audio-btn-play { width: 48px; height: 48px; border-color: var(--accent); background: var(--primary); }
+    .audio-btn-play:hover { background: var(--primary-light); box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+    #audioElement { display: none; }
 
-    /* ---- LOVE LETTER (with collage unlock condition) ---- */
+    /* ---- LOVE LETTER SEQUENCE (7 slides) ---- */
     .letter-section {
       border-radius: var(--radius-lg); border: 2px solid var(--primary);
-      background: rgba(15, 8, 8, 0.6); padding: 1.2rem;
-      box-shadow: inset 0 0 30px rgba(255, 215, 0, 0.05); margin-bottom: 1.5rem;
+      background: rgba(15, 8, 8, 0.6); padding: 2rem;
+      box-shadow: inset 0 0 30px rgba(255, 215, 0, 0.05); margin-bottom: 2rem;
     }
-    .letter-card { gap: 1rem; }
-    .letter-photo { max-width: 100%; }
-    .letter-text-box { padding: 1.2rem; }
-    .letter-text-box p { font-size: 1rem; }
+    .letter-card { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+    .letter-photo {
+      width: 100%; max-width: 480px; border-radius: 1.5rem;
+      border: 4px solid var(--accent);
+      box-shadow: 0 12px 0 var(--primary-dark), 0 16px 35px rgba(0,0,0,0.8);
+      overflow: hidden; transition: opacity 0.35s, transform 0.35s;
+    }
+    .letter-photo img,
+    .letter-photo video {
+      width: 100%; display: block; object-fit: cover;
+    }
+    .letter-text-box {
+      max-width: 700px; border-radius: 2.5rem; border: 1px solid var(--primary);
+      background: rgba(5, 5, 5, 0.95); padding: 1.5rem 2rem; text-align: center;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.12); transition: opacity 0.35s, transform 0.35s;
+    }
+    .letter-text-box p { color: var(--accent); font-size: 1.15rem; line-height: 1.6; font-weight: 500; }
+    .letter-counter { color: var(--text-muted); font-size: 0.85rem; letter-spacing: 2px; margin-top: 0.5rem; }
+    .fade-out { opacity: 0; transform: scale(0.95) translateY(8px); }
 
     /* ---- COLLAGE (locked until all 7 slides are viewed) ---- */
     .collage-wrapper {
       transition: opacity 0.5s ease;
+      margin-top: 2rem;
     }
     .collage-locked {
       opacity: 0.5;
@@ -264,36 +301,65 @@
       }
     }
 
-    .collage-heading h3 { font-size: 1.3rem; }
-    .collage-heading p { font-size: 0.8rem; }
+    .collage-heading {
+      text-align: center; margin-bottom: 1.5rem;
+    }
+    .collage-heading h3 {
+      color: var(--accent); font-size: 1.5rem; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; margin-bottom: 0.3rem;
+    }
+    .collage-heading p { color: var(--text-muted); font-size: 0.9rem; }
+
     .collage-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-auto-rows: 110px;
-      gap: 0.5rem;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 140px;
+      gap: 0.65rem;
     }
-    .mc-tall { grid-row: span 2; }
+
+    .memory-card {
+      background: var(--card);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 2px solid var(--border);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .memory-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(128, 0, 32, 0.4), 0 0 20px rgba(255, 215, 0, 0.1);
+      z-index: 2;
+    }
+    .memory-card img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.5s ease;
+    }
+    .memory-card:hover img { transform: scale(1.06); }
+    .memory-card .caption-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.6) 50%, transparent 100%);
+      padding: 2rem 0.75rem 0.6rem;
+      color: var(--accent); font-size: 0.75rem; font-weight: 600;
+      text-align: center; letter-spacing: 0.4px;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .memory-card:hover .caption-overlay { opacity: 1; }
+
+    /* Masonry span definitions */
+    .mc-tall { grid-row: span 3; }
     .mc-wide { grid-column: span 2; }
     .mc-wide-short { grid-column: span 2; grid-row: span 2; }
-    .mc-standard { grid-row: span 1; }
-    .mc-feature { grid-column: span 2; grid-row: span 2; }
-
-    .memory-card .caption-overlay {
-      font-size: 0.7rem;
-      padding: 1.5rem 0.5rem 0.4rem;
-    }
+    .mc-standard { grid-row: span 2; }
+    .mc-feature { grid-column: span 2; grid-row: span 3; }
 
     .collage-footer {
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--primary);
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
+      margin-top: 1.5rem; padding-top: 1.25rem;
+      border-top: 1px solid var(--primary); text-align: center;
+      color: var(--text-muted); font-size: 0.85rem; letter-spacing: 2px;
+      display: flex; align-items: center; justify-content: center; gap: 0.75rem;
     }
 
     /* ---- LIGHTBOX ---- */
@@ -305,49 +371,79 @@
     }
     .lightbox.active { opacity: 1; visibility: visible; }
     .lightbox-inner {
-      position: relative; max-width: 95vw;
+      position: relative; max-width: 92vw; max-height: 92vh;
       animation: zoomIn 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
     .lightbox-image {
-      max-width: 100%; max-height: 80vh;
+      max-width: 100%; max-height: 82vh;
       border: 3px solid var(--accent); border-radius: 1rem;
       box-shadow: 0 0 50px rgba(255, 215, 0, 0.2);
       object-fit: contain;
     }
     .lightbox-caption {
-      position: absolute; bottom: -2rem; left: 50%; transform: translateX(-50%);
-      color: var(--accent); font-size: 0.85rem; font-weight: 600;
-      padding: 0.3rem 1rem; background: rgba(128, 0, 32, 0.85);
-      border-radius: var(--radius-full); backdrop-filter: blur(4px);
-      white-space: nowrap;
+      position: absolute; bottom: -2.5rem; left: 50%; transform: translateX(-50%);
+      white-space: nowrap; color: var(--accent);
+      font-size: 1rem; font-weight: 600; padding: 0.4rem 1.5rem;
+      background: rgba(128, 0, 32, 0.85); border-radius: var(--radius-full);
+      backdrop-filter: blur(4px);
     }
     .lightbox-close {
-      position: absolute; top: 0.5rem; right: 0.5rem;
-      width: 40px; height: 40px; border-radius: 50%;
+      position: absolute; top: -1.5rem; right: -1.5rem;
+      width: 44px; height: 44px; border-radius: 50%;
       background: var(--primary); border: 2px solid var(--accent);
       color: var(--accent); display: flex; align-items: center; justify-content: center;
       cursor: pointer; transition: all 0.2s;
     }
+    .lightbox-close:hover { background: var(--primary-light); transform: scale(1.15); box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
     .lb-arrow {
       position: absolute; top: 50%; transform: translateY(-50%);
-      width: 40px; height: 40px; border-radius: 50%;
+      width: 50px; height: 50px; border-radius: 50%;
       background: var(--primary); border: 2px solid var(--accent);
       color: var(--accent); display: flex; align-items: center; justify-content: center;
-      cursor: pointer; transition: all 0.2s; font-size: 1.4rem;
+      cursor: pointer; transition: all 0.2s; font-size: 1.4rem; font-weight: bold;
     }
-    .lb-prev { left: 0.5rem; }
-    .lb-next { right: 0.5rem; }
+    .lb-arrow:hover { background: var(--primary-light); transform: translateY(-50%) scale(1.12); box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+    .lb-prev { left: -2rem; }
+    .lb-next { right: -2rem; }
     .lb-counter {
-      position: absolute; top: -1.5rem; left: 50%; transform: translateX(-50%);
-      color: var(--text-muted); font-size: 0.8rem;
+      position: absolute; top: -2rem; left: 50%; transform: translateX(-50%);
+      color: var(--text-muted); font-size: 0.8rem; letter-spacing: 2px;
     }
 
-    @media (min-width: 600px) {
-      .main-container { max-width: 700px; }
-      .password-row { flex-direction: row; }
-      .password-input { width: 220px; }
-      .progress-bar { display: block; }
-      .collage-grid { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 140px; }
+    /* ---- Responsive ---- */
+    @media (max-width: 900px) {
+      .collage-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 130px; }
+      .mc-tall { grid-row: span 2; }
+      .mc-feature { grid-column: span 2; grid-row: span 2; }
+      .mc-wide-short { grid-column: span 2; grid-row: span 2; }
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 1rem 0.5rem; }
+      .love-letter-box { padding: 1.25rem; border-radius: 2rem; }
+      .vault-title { font-size: 2rem; }
+      .vault-card { padding: 1.5rem 1rem; }
+      .collage-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 120px; gap: 0.5rem; }
+      .mc-tall { grid-row: span 2; }
+      .mc-feature { grid-column: span 2; grid-row: span 2; }
+      .mc-wide { grid-column: span 2; }
+      .mc-wide-short { grid-column: span 2; grid-row: span 2; }
+      .progress-bar { display: none; }
+      .audio-bar { padding: 0.6rem 1rem; border-radius: 1.5rem; }
+      .password-row { flex-direction: column; }
+      .password-input { width: 100%; max-width: 280px; }
+      .lb-prev { left: 0.5rem; }
+      .lb-next { right: 0.5rem; }
+      .lightbox-close { top: 0.5rem; right: 0.5rem; }
+      .lightbox-caption { font-size: 0.85rem; padding: 0.3rem 1rem; }
+      .letter-text-box { padding: 1rem 1.25rem; border-radius: 1.5rem; }
+      .letter-text-box p { font-size: 1rem; }
+      .welcome-section { padding: 1.25rem; }
+      .welcome-text { font-size: 1rem; }
+      .video-section { padding: 1rem; }
+      .video-inner { padding: 1.25rem; }
+      .video-title { font-size: 1.3rem; }
+      .letter-section { padding: 1.25rem; }
     }
   </style>
 </head>
@@ -356,8 +452,8 @@
 <div class="main-container">
   <div class="love-letter-box">
 
-    <!-- ===== PHASE 1: VAULT (shown immediately) ===== -->
-    <div id="vaultPhase">
+    <!-- ===== PHASE 1: VAULT ===== -->
+    <div id="vaultPhase" class="vault-section">
       <div class="vault-card animate-pulse-glow">
         <div class="floating-hearts">
           <svg class="icon icon-md icon-filled animate-float" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -417,7 +513,7 @@
             every word from my heart
           </p>
         </div>
-        <div style="margin-top:1.2rem">
+        <div style="margin-top:1.5rem">
           <button id="continueBtn" class="btn btn-large">
             <svg class="icon icon-md icon-filled" style="color:var(--accent)" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             <span>Continue</span>
@@ -527,7 +623,7 @@
 
   const SECRET_PASS = "baddie";
 
-  // ---------- LOVE LETTER SEQUENCE (7 slides) ----------
+  // ---------- LOVE LETTER SEQUENCE (7 slides in exact order) ----------
   const loveLetters = [
     { type: "video", file: "videoslide1.mp4", text: "Every moment with you is a treasure. This is the beginning of our story." },
     { type: "video", file: "videoslide2.mp4", text: "You walked into my life and painted it with golden light." },
@@ -538,38 +634,28 @@
     { type: "image", file: "imageslide4.jpeg", text: "You shaped my heart into something I never knew it could be. Forever grateful, forever yours." }
   ];
 
-  // ---------- COLLAGE IMAGES - image1.jpeg to image15.jpeg ----------
-  const collageImages = [];
-  for (let i = 1; i <= 15; i++) {
-    let caption = "";
-    if (i === 1) caption = "✨ the moment i saw you · baddie aura";
-    else if (i === 2) caption = "🌙 you listened · my heart shifted";
-    else if (i === 3) caption = "🖤 your laugh · burgundy wine";
-    else if (i === 4) caption = "📖 you shaped my dreams";
-    else if (i === 5) caption = "💛 you + me · golden hour";
-    else if (i === 6) caption = "🥀 your strength · my anchor";
-    else if (i === 7) caption = "♾️ baddie · my universe";
-    else if (i === 8) caption = "💖 forever and always";
-    else if (i === 9) caption = "🌹 our love story";
-    else if (i === 10) caption = "💫 you complete me";
-    else if (i === 11) caption = "✨ my everything";
-    else if (i === 12) caption = "💕 always and forever";
-    else if (i === 13) caption = "🌟 my sunshine";
-    else if (i === 14) caption = "💝 my heart is yours";
-    else if (i === 15) caption = "💞 eternally grateful";
-    
-    let span = "mc-standard";
-    if (i === 1) span = "mc-feature";
-    else if (i === 2 || i === 6) span = "mc-tall";
-    else if (i === 4 || i === 5 || i === 8) span = "mc-wide-short";
-    else if (i === 7) span = "mc-wide-short";
-    
-    collageImages.push({
-      src: "image" + i + ".jpeg",
-      caption: caption,
-      span: span
-    });
-  }
+  // ---------- COLLAGE IMAGES (using the provided image URLs) ----------
+  const IMG = {
+    image1: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image1-h2WF55krLEFJreNbvhIPLg3FSJvGWn.jpeg",
+    image2: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image2-lvWP4kutl28NLFrmI5y2wP6OQNTnev.jpeg",
+    image3: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image3-0wDDuqMKr3i273fsPKBNveiVg5zZNJ.jpeg",
+    image4: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image4-nkcewO0R4odnt0RRy8Mf0i75KpCItc.jpeg",
+    image5: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image5-mVR6puj6YkfC2GPc8SexN98dfSjqgH.jpeg",
+    image6: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image6-VYHq8HDrFPtClZpD9bLG0nhl4qJ97H.jpeg",
+    image7: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image7-1v10WLhopOM9FXIZ9dQs2D5qQsHf2D.jpeg",
+    us:     "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/us-iBK35Yela5l3tmYRgQLJupUdaCiVgP.jpeg"
+  };
+
+  const collageImages = [
+    { src: IMG.image1, caption: "✨ the moment i saw you · baddie aura", span: "mc-feature" },
+    { src: IMG.image2, caption: "🌙 you listened · my heart shifted", span: "mc-tall" },
+    { src: IMG.image3, caption: "🖤 your laugh · burgundy wine", span: "mc-standard" },
+    { src: IMG.image4, caption: "📖 you shaped my dreams", span: "mc-wide-short" },
+    { src: IMG.image5, caption: "💛 you + me · golden hour", span: "mc-wide-short" },
+    { src: IMG.image6, caption: "🥀 your strength · my anchor", span: "mc-tall" },
+    { src: IMG.image7, caption: "♾️ baddie · my universe", span: "mc-standard" },
+    { src: IMG.us,     caption: "💖 forever and always", span: "mc-wide-short" }
+  ];
 
   // ---------- AUDIO TRACKS ----------
   const tracks = [
@@ -833,6 +919,7 @@
     if (e.target === lightbox) closeLightbox();
   });
 
+  // Swipe support for lightbox
   let touchStartX = 0;
   lightbox.addEventListener("touchstart", (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
   lightbox.addEventListener("touchend", (e) => {
@@ -869,9 +956,7 @@
   - imageslide4.jpeg
   
   🖼️ COLLAGE IMAGES (unlocked after all 7 slides are viewed):
-  - image1.jpeg through image15.jpeg
-  
-  🔒 COLLAGE: Only accessible after completing all 7 love letter slides
+  - Uses the provided image URLs (no local files needed for collage)
 -->
 </body>
 </html>
